@@ -1,5 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
+const methodOverride = require('method-override')
+
 
 // CONFIGURATION
 require('dotenv').config()
@@ -25,8 +27,9 @@ app.get('*', (req, res) => {
   res.send('404')
 })
 
-
   // MIDDLEWARE
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
