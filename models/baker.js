@@ -31,6 +31,7 @@ bakerSchema.post('findOneAndDelete', function() {
             console.log(deleteStatus)
         })
   })
+        
   
 // model and export
 const Baker = mongoose.model('Baker', bakerSchema)
